@@ -17,14 +17,7 @@ public abstract class GoogleFixture {
 	protected GoogleSearchPage searchPage;
 
     GoogleFixture() {
-        this(false);
-    }
-    
-	GoogleFixture(boolean logWebDriverEvents) {
 		browser = new Browser();
-        if (logWebDriverEvents) {
-            browser.addLogger();
-        }
 		searchPage = new GoogleSearchPage(browser.getDriver());	
 	}
 	

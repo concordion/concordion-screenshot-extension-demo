@@ -1,35 +1,26 @@
-// Tested with gradle-1.0
-apply plugin: 'groovy'
-apply plugin: 'eclipse'
+apply plugin: 'java'
 
-version = '1.1.0.4'
-archivesBaseName = 'concordion-extensions-demo'
-eclipse.project.name = 'concordion-extensions-demo-selenium2'
-sourceCompatibility = 1.6
+description = 'Demonstration of the concordion screenshot extension, using a custom Selenium screenshot taker'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testCompile 'org.concordion:concordion:1.4.3',
-                'org.concordion:concordion-extensions:1.1.0',
-                'org.seleniumhq.selenium:selenium-java:2.+',
-                'org.slf4j:slf4j-api:1.6.1'
-                
-    runtime 'org.slf4j:slf4j-jdk14:1.6.1'
+ext {
+	concordionVersion = "1.4.4"	
+	concordionScreenshotVersion = "1.1.2-SNAPSHOT"	
+	seleniumVersion = "[2.40,)"	
+	slf4jVersion = "1.6.1"	
 }
 
-task createDistZip(type: Zip) {
-    from '.'
-    into 'concordion-extensions-demo'
-    exclude '.*'
-    exclude 'bin', 'build', 'target'
+dependencies {
+    testCompile "org.concordion:concordion:$concordionVersion",
+                "org.concordion:concordion-screenshot-extension:$concordionScreenshotVersion",
+                "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
 }
 
 test {
-    include '**/ExtensionsDemo.*'
+    include '**/ScreenshotDemo.*'
     systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"
+    outputs.upToDateWhen { false } // force it to run even if test code hasn't changed
 }
-
-test.dependsOn cleanTest

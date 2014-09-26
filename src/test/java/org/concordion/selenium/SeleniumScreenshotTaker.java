@@ -1,4 +1,4 @@
-package org.concordion.ext.selenium;
+package org.concordion.selenium;
 
 import java.io.IOException;
 import java.io.OutputStream;

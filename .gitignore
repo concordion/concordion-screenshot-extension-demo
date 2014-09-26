@@ -1,8 +1,12 @@
-/.gradle
-/target
+# Gradle
+.gradle
+build/
 
-/.settings
-/.classpath
-/.project
-/bin
-/build
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Maven
+target/

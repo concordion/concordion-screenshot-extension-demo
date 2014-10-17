@@ -42,7 +42,7 @@ The tests should pass successfully, though the console output will show failures
 These tests deliberately contains failures in order to demonstrate features.  They use Concordion's `@ExpectedToFail` annotation to keep the JUnit passing (you'd normally only use this when you have a partially implemented feature).
 
 ### Concordion output
-The output folder should contain the following specification. (You can see an example of it [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/ScreenshotDemo.html).
+The output folder should contain the following specification. (You can see an example of it [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/ScreenshotDemo.html)).
 
 #### ScreenshotDemo.html
 This should show a failing example (red). Hovering the mouse over the failing example will show a screenshot taken when the failure occurred. Clicking on the failure will open the screenshot.

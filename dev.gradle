@@ -3,7 +3,6 @@
 
 allprojects {
     repositories {
-        // Only include the following repository for snapshots
         maven {  
             url 'https://oss.sonatype.org/content/repositories/snapshots/'
         }

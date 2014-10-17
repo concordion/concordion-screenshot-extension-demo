@@ -2,6 +2,8 @@ Introduction
 ------------------
 
 This project demonstrates the usage of the [Concordion](http://concordion.org) [Screenshot Extension](http://github.com/concordion/concordion-screenshot-extension) with [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/).
+
+Example output is shown [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/ScreenshotDemo.html).
     
 Running the tests
 ---------------------------
@@ -40,7 +42,7 @@ The tests should pass successfully, though the console output will show failures
 These tests deliberately contains failures in order to demonstrate features.  They use Concordion's `@ExpectedToFail` annotation to keep the JUnit passing (you'd normally only use this when you have a partially implemented feature).
 
 ### Concordion output
-The output folder should contain the following specification.
+The output folder should contain the following specification. (You can see an example of it [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/ScreenshotDemo.html).
 
 #### ScreenshotDemo.html
 This should show a failing example (red). Hovering the mouse over the failing example will show a screenshot taken when the failure occurred. Clicking on the failure will open the screenshot.
@@ -65,6 +67,14 @@ The easiest way to do this may be to add the following lines to the Site() const
 replacing `<proxy.host>` with the host name of the proxy server, and `<proxy.port>` with the port number.
 
 If your proxy requires authentication, you will also need to set the properties `http.ProxyUser` and `http.proxyPassword`.
+
+Additional Gradle Files
+-----------------------
+`dev.gradle` is only needed if you want to run against snapshot or local builds of the concordion-screenshot-extension.
+`publish.gradle` is only needed if you want to publish the output to Github pages.
+
+If copying the project for your own use, you probably won't want either of these files.
+  
   
 Mailing List
 -----------------

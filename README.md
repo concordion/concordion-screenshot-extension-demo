@@ -33,7 +33,7 @@ What you should see
 The tests will open a Firefox browser and perform a Google search.
     
 ### JUnit output
-The tests should pass successfully, though the console output will show a failure with the message:
+The test should pass successfully, though the console output will show a failure with the message:
 
 > <-- Note: This test has been marked as EXPECTED_TO_FAIL
 
@@ -45,9 +45,9 @@ The output folder should contain the following specification. (You can see an ex
 #### ScreenshotDemo.html
 This should show a failing example (red). Hovering the mouse over the failing example will show a screenshot taken when the failure occurred. Clicking on the failure will open the screenshot.
 
-The screenshot extension is configured with a custom `SeleniumScreenshotTaker` class that uses Selenium's [TakesScreenshot](http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/TakesScreenshot.html) interface to take a screenshot of the web page.  The extension has a number of [configuration options](http://concordion.org/extensions/ScreenshotExtension.html#Configuration), for example to also take screenshots on successful examples and to set the image width.
+The screenshot extension is configured with a custom `SeleniumScreenshotTaker` class that uses Selenium's [TakesScreenshot](http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/TakesScreenshot.html) interface to take a screenshot of the web page.  The extension has a number of [configuration options](https://github.com/concordion/concordion-screenshot-extension#configuration), for example to also take screenshots on successful examples and to set the image width.
 
-It can also be used to [explicitly add screenshots](http://concordion.org/extensions/ScreenshotExtension.html#Explicit_screenshots) to the Concordion output.
+It can also be used to [explicitly add screenshots](https://github.com/concordion/concordion-screenshot-extension#explicitly-adding-screenshots-to-the-output) to the Concordion output.
     
 Potential Issues
 ------------------------

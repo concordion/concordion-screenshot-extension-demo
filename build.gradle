@@ -1,11 +1,6 @@
 apply plugin: 'java'
-apply plugin: 'wrapper'
 
 description = 'Demonstration of the concordion screenshot extension, using a custom Selenium screenshot taker'
-
-wrapper {
-    gradleVersion = "2.2"
-}
 
 repositories {
     mavenCentral()

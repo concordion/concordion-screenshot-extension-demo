@@ -11,7 +11,7 @@ repositories {
 }
 
 ext {
-	concordionVersion = "1.4.4"
+	concordionVersion = "[1.4.4,)"
 	concordionScreenshotVersion = "[1.1.2,)"
 	seleniumVersion = "[2.43,)"
 	slf4jVersion = "1.6.1"

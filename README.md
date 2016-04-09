@@ -13,8 +13,7 @@ The tests use Selenium's FirefoxDriver, so you'll need to have Firefox installed
 The download includes support to run the tests with either <a href="http://www.gradle.org/">Gradle</a> or <a href="http://maven.apache.org/">Maven</a>.  
     
 ### Using Gradle
-1. [Download](http://www.gradle.org/downloads.html) and [install](http://www.gradle.org/installation.html) Gradle (this has been tested with 2.1)
-1. From a command line opened at the location to which this package has been unzipped, run `gradle clean test`
+1. From a command line opened at the location to which this package has been unzipped, run `gradlew clean test`
 1. View the Concordion output under the subfolder `build/reports/spec/org/concordion/ext/demo/selenium/`
     
 ### Using Maven
@@ -25,7 +24,7 @@ The download includes support to run the tests with either <a href="http://www.g
 ### Running from your IDE
 Import as a Gradle or as a Maven project. This may require additional plugins to be installed to support Gradle or Maven.
 
-Under the `src/test/java` folder, find the `ScreenshotDemo` class in the `org.concordion.ext.demo.selenium` package and run as a JUnit test. The location of the Concordion output is shown on the standard output console.
+Under the `src/test/java` folder, find the `ScreenshotDemoFixture` class in the `org.concordion.ext.demo.selenium` package and run as a JUnit test. The location of the Concordion output is shown on the standard output console.
 
 
 What you should see
@@ -37,7 +36,7 @@ The test should pass successfully, though the console output will show a failure
 
 > <-- Note: This test has been marked as EXPECTED_TO_FAIL
 
-This test deliberately fails in order to demonstrate the extension.  It uses Concordion's `@ExpectedToFail` annotation to keep the JUnit passing (you'd normally only use this when you have a partially implemented feature).
+This test deliberately fails in order to demonstrate the extension.  The example in the specification is tagged with a status attribute of `ExpectedToFail` - the JUnit test passes since it meets this expectation (you'd normally only use this when you have a partially implemented feature).
 
 ### Concordion output
 The output folder should contain the following specification. (You can see an example of it [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/ScreenshotDemo.html)).
@@ -68,10 +67,9 @@ If your proxy requires authentication, you will also need to set the properties 
 
 Additional Gradle Files
 -----------------------
-`dev.gradle` is only needed if you want to run against snapshot or local builds of the concordion-screenshot-extension.
 `publish.gradle` is only needed if you want to publish the output to Github pages.
 
-If copying the project for your own use, you probably won't want either of these files.
+If copying the project for your own use, you probably won't want this file.
 
 Mailing List
 -----------------

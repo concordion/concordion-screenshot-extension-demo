@@ -1,8 +1,8 @@
 package org.concordion.ext.demo.selenium.web;
 
 import java.util.List;
-import java.util.logging.Logger;
 
+import org.concordion.selenium.Browser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +11,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A WebDriver Page Object corresponding to the Google Results Page.
@@ -29,7 +31,7 @@ public class GoogleResultsPage {
     @FindBy(id = "cwos")
     private WebElement calcResultLink;
 
-    private static Logger logger = Logger.getLogger(GoogleResultsPage.class.getName());
+    private final Logger logger = LoggerFactory.getLogger("google.results");
 
     private final WebDriver driver;
 
@@ -37,8 +39,8 @@ public class GoogleResultsPage {
 	 * Initialises the results page and waits for the page to fully load.
 	 * Assumes that the results page is already loading.
 	 */
-    public GoogleResultsPage(WebDriver driver) {
-		this.driver = driver;
+    public GoogleResultsPage(Browser browser) {
+		this.driver = browser.getDriver();
         PageFactory.initElements(driver, this);
         waitForFooter();
 	}

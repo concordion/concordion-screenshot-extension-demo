@@ -3,28 +3,23 @@ apply plugin: 'java'
 description = 'Demonstration of the concordion screenshot extension, using a custom Selenium screenshot taker'
 
 wrapper {
-    gradleVersion = "2.2"
+    gradleVersion = '2.12'
 }
 
 repositories {
     mavenCentral()
 }
 
-ext {
-	concordionVersion = "[1.4.4,)"
-	concordionScreenshotVersion = "[1.1.2,)"
-	seleniumVersion = "[2.43,)"
-	slf4jVersion = "1.6.1"
-}
-
 dependencies {
-    testCompile "org.concordion:concordion:$concordionVersion",
-                "org.concordion:concordion-screenshot-extension:$concordionScreenshotVersion",
-                "org.seleniumhq.selenium:selenium-java:$seleniumVersion"
+    testCompile 'org.concordion:concordion:2.0.0',
+                'org.concordion:concordion-screenshot-extension:1.2.0',
+                'org.seleniumhq.selenium:selenium-java:[2.43,)',
+                'org.slf4j:slf4j-api:1.7.21',
+                'ch.qos.logback:logback-classic:1.1.7'
 }
 
 test {
-    include '**/ScreenshotDemo.*'
     systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"
     outputs.upToDateWhen { false } // force it to run even if test code hasn't changed
+    testLogging.showStandardStreams = true
 }

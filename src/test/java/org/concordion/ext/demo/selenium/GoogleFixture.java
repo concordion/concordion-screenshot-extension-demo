@@ -1,8 +1,8 @@
 package org.concordion.ext.demo.selenium;
 
-import org.concordion.ext.demo.selenium.web.Browser;
 import org.concordion.ext.demo.selenium.web.GoogleSearchPage;
 import org.concordion.integration.junit4.ConcordionRunner;
+import org.concordion.selenium.Browser;
 import org.junit.After;
 import org.junit.runner.RunWith;
 
@@ -18,7 +18,7 @@ public abstract class GoogleFixture {
 
     GoogleFixture() {
 		browser = new Browser();
-		searchPage = new GoogleSearchPage(browser.getDriver());	
+		searchPage = new GoogleSearchPage(browser);	
 	}
 	
 	@After

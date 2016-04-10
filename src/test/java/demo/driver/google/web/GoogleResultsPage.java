@@ -1,4 +1,4 @@
-package org.concordion.ext.demo.selenium.web;
+package demo.driver.google.web;
 
 import java.util.List;
 

@@ -97,7 +97,7 @@
             <concordion.output.dir>target/concordion</concordion.output.dir>
           </systemPropertyVariables>
           <includes>
-            <include>**/ScreenshotDemoFixture.java</include>
+            <include>**/*.java</include>
           </includes>
         </configuration>
       </plugin>

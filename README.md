@@ -3,7 +3,7 @@ Introduction
 
 This project demonstrates the usage of the [Concordion](http://concordion.org) [Screenshot Extension](http://github.com/concordion/concordion-screenshot-extension) with [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/).
 
-Example output is shown [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/ScreenshotDemo.html).
+Example output is shown [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/demo/ScreenshotDemo.html).
     
 Running the tests
 ---------------------------
@@ -14,17 +14,17 @@ The download includes support to run the tests with either <a href="http://www.g
     
 ### Using Gradle
 1. From a command line opened at the location to which this package has been unzipped, run `gradlew clean test`
-1. View the Concordion output under the subfolder `build/reports/spec/org/concordion/ext/demo/selenium/`
+1. View the Concordion output under the subfolder `build/reports/spec/demo`
     
 ### Using Maven
 1. Download and install maven (this has been tested with 3.0.3)
 1. From a command line opened at the location to which this package has been unzipped, run `mvn test`
-1. View the Concordion output under the subfolder `target/concordion/org/concordion/ext/demo/selenium/`
+1. View the Concordion output under the subfolder `target/concordion/demo`
 
 ### Running from your IDE
 Import as a Gradle or as a Maven project. This may require additional plugins to be installed to support Gradle or Maven.
 
-Under the `src/test/java` folder, find the `ScreenshotDemoFixture` class in the `org.concordion.ext.demo.selenium` package and run as a JUnit test. The location of the Concordion output is shown on the standard output console.
+Under the `src/test/java` folder, find the `ScreenshotDemoFixture` class in the `demo` package and run as a JUnit test. The location of the Concordion output is shown on the standard output console.
 
 
 What you should see
@@ -39,7 +39,7 @@ The test should pass successfully, though the console output will show a failure
 This test deliberately fails in order to demonstrate the extension.  The example in the specification is tagged with a status attribute of `ExpectedToFail` - the JUnit test passes since it meets this expectation (you'd normally only use this when you have a partially implemented feature).
 
 ### Concordion output
-The output folder should contain the following specification. (You can see an example of it [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/ScreenshotDemo.html)).
+The output folder should contain the following specification. (You can see an example of it [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/demo/ScreenshotDemo.html)).
 
 #### ScreenshotDemo.html
 This should show a failing example (red). Hovering the mouse over the failing example will show a screenshot taken when the failure occurred. Clicking on the failure will open the screenshot.

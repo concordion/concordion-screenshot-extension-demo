@@ -1,4 +1,4 @@
-package org.concordion.ext.demo.selenium.web;
+package demo.driver.google.web;
 
 import org.concordion.selenium.Browser;
 import org.openqa.selenium.Keys;

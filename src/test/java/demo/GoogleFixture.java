@@ -1,10 +1,11 @@
-package org.concordion.ext.demo.selenium;
+package demo;
 
-import org.concordion.ext.demo.selenium.web.GoogleSearchPage;
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.concordion.selenium.Browser;
 import org.junit.After;
 import org.junit.runner.RunWith;
+
+import demo.driver.google.web.GoogleSearchPage;
 
 /** 
  * A base class for Google search tests that opens up the Google site
@@ -18,7 +19,6 @@ public abstract class GoogleFixture {
 
     GoogleFixture() {
 		browser = new Browser();
-		searchPage = new GoogleSearchPage(browser);	
 	}
 	
 	@After

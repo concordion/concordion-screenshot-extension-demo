@@ -1,12 +1,14 @@
-package org.concordion.ext.demo.selenium;
+package demo;
 
 import org.concordion.api.extension.ConcordionExtension;
 import org.concordion.api.extension.Extension;
 import org.concordion.ext.ScreenshotExtension;
-import org.concordion.ext.demo.selenium.web.GoogleResultsPage;
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.concordion.selenium.SeleniumScreenshotTaker;
 import org.junit.runner.RunWith;
+
+import demo.driver.google.web.GoogleResultsPage;
+import demo.driver.google.web.GoogleSearchPage;
 
 /**
  * A fixture class for the ScreenshotDemo.html specification.
@@ -34,6 +36,7 @@ public class ScreenshotDemoFixture extends GoogleFixture {
 	 * Searches for the specified topic, and waits for the results page to load.
 	 */
     public void searchFor(String topic) {
+        searchPage = new GoogleSearchPage(browser); 
 		resultsPage = searchPage.searchFor(topic);
 	}
 	

@@ -1,5 +1,6 @@
 package org.concordion.ext.demo.selenium.web;
 
+import org.concordion.selenium.Browser;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,13 +24,14 @@ public class GoogleSearchPage {
     @FindBy(className = "nonExistent")
     private WebElement nonExistentLink;
 
-    private final WebDriver driver;
+    private Browser browser;
     
 	/**
 	 * Opens the Google Search Page.
 	 */
-	public GoogleSearchPage(WebDriver webDriver) {
-		this.driver = webDriver;
+	public GoogleSearchPage(Browser browser) {
+		this.browser = browser;
+        WebDriver driver = browser.getDriver();
         PageFactory.initElements(driver, this);
 		driver.get("http://www.google.com");
 	}
@@ -42,7 +44,7 @@ public class GoogleSearchPage {
         queryBox.sendKeys(query);
         queryBox.sendKeys(Keys.ESCAPE);
 		submitButton.click();
-		return new GoogleResultsPage(driver);
+		return new GoogleResultsPage(browser);
 	}
     
     public void clickOnNonExistentLink() {

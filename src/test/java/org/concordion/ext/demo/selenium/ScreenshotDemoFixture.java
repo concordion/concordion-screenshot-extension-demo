@@ -1,6 +1,5 @@
 package org.concordion.ext.demo.selenium;
 
-import org.concordion.api.ExpectedToFail;
 import org.concordion.api.extension.ConcordionExtension;
 import org.concordion.api.extension.Extension;
 import org.concordion.ext.ScreenshotExtension;
@@ -13,22 +12,18 @@ import org.junit.runner.RunWith;
  * A fixture class for the ScreenshotDemo.html specification.
  * <p>
  * This adds the Screenshot Extension to Concordion to include screenshots on error in the Concordion output.
- * By default this extension uses java.awt.Robot to take the screenshot. 
  * <p>
- * To include just the browser screen in the results, we configure the extension using the {@link ScreenshotExtensionFactory}
- * and {@link SeleniumScreenshotTaker} to take screenshots using WebDriver's TakesScreenshot interface.
- * <p>
- * This example also demonstrates the {@link TimestampFormatterExtension}, which changes the Concordion footer to show times
- * in hours, minutes and seconds. 
+ * By default this extension uses java.awt.Robot as a ScreenshotTaker. This takes a screenshot of the current desktop.
+ * To include just the browser screen in the results, we set a custom {@link SeleniumScreenshotTaker} that take screenshots 
+ * using WebDriver's TakesScreenshot interface.
  * <p>
  * Run this class as a JUnit test to produce the Concordion results.  The test is expected to fail, since Google Calculator 
  * doesn't special case the answer to life, the universe and everything.
  */
 @RunWith(ConcordionRunner.class)
-@ExpectedToFail
-public class ScreenshotDemo extends GoogleFixture {
+public class ScreenshotDemoFixture extends GoogleFixture {
 	
-    private SeleniumScreenshotTaker screenshotTaker = new SeleniumScreenshotTaker(browser.getDriver());
+    private SeleniumScreenshotTaker screenshotTaker = new SeleniumScreenshotTaker(browser);
     
     @Extension
     public ConcordionExtension extension = new ScreenshotExtension().setScreenshotTaker(screenshotTaker);

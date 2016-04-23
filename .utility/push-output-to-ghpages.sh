@@ -12,6 +12,9 @@ if [ "$TRAVIS_REPO_SLUG" == "$REPO" ] && [ "$TRAVIS_JDK_VERSION" == "oraclejdk8"
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "travis-ci"
   git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/$REPO gh-pages > /dev/null
+  cd gh-pages
+  git remote rm origin
+  git remote add origin https://${GH_TOKEN}@github.com/$REPO
 
   cd gh-pages
   git rm -rf ./spec

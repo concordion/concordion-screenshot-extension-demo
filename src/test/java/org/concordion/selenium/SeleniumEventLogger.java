@@ -14,15 +14,19 @@ public class SeleniumEventLogger implements WebDriverEventListener {
     private String oldValue;
 
     @Override
-    public void beforeChangeValueOf(WebElement arg0, WebDriver arg1) {
-        oldValue = arg0.getAttribute("value");
+    public void afterClickOn(WebElement arg0, WebDriver arg1) {
     }
 
     @Override
-    public void afterChangeValueOf(WebElement arg0, WebDriver arg1) {
-        String elementName = getElementName(arg0);
+    public void beforeChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
+        oldValue = element.getAttribute("value");
+    }
+
+    @Override
+    public void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
+        String elementName = getElementName(element);
         try {
-            String newValue = arg0.getAttribute("value");
+            String newValue = element.getAttribute("value");
             if (!newValue.equals(oldValue)) {
                 if (newValue.length() == 0) {
                     logger.debug("[{}] - cleared value", elementName);
@@ -33,10 +37,6 @@ public class SeleniumEventLogger implements WebDriverEventListener {
         } catch (Exception e) {
             logger.debug("[{}] - changed value", elementName);
         }
-    }
-
-    @Override
-    public void afterClickOn(WebElement arg0, WebDriver arg1) {
     }
 
     @Override
@@ -82,12 +82,27 @@ public class SeleniumEventLogger implements WebDriverEventListener {
     }
 
     @Override
+    public void beforeAlertAccept(WebDriver driver) {
+    }
+
+    @Override
+    public void afterAlertAccept(WebDriver driver) {
+    }
+
+    @Override
+    public void afterAlertDismiss(WebDriver driver) {
+    }
+
+    @Override
+    public void beforeAlertDismiss(WebDriver driver) {
+    }
+
+    @Override
     public void beforeNavigateTo(String arg0, WebDriver arg1) {
     }
 
     @Override
     public void beforeScript(String arg0, WebDriver arg1) {
-
     }
 
     @Override
@@ -108,11 +123,9 @@ public class SeleniumEventLogger implements WebDriverEventListener {
 
     @Override
     public void beforeNavigateRefresh(WebDriver driver) {
-
     }
 
     @Override
     public void afterNavigateRefresh(WebDriver driver) {
-
     }
 }

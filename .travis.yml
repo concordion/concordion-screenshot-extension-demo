@@ -13,7 +13,7 @@ before_install:
   - mkdir geckodriver
   - tar -xzf geckodriver-v0.15.0-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
-  - export webdriver.gecko.driver=$PWD/geckodriver/geckodriver
+  - export JAVA_OPTS=$JAVA_OPTS:webdriver.gecko.driver=$PWD/geckodriver/geckodriver
 addons:
   - firefox: "latest"
 after_success:

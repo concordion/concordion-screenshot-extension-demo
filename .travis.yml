@@ -17,6 +17,6 @@ before_install:
   - tar -xzf geckodriver-v0.15.0-linux64.tar.gz -C geckodriver
   - export PATH=$PATH:$PWD/geckodriver
 addons:
-  - firefox: "51.0"
-after_script:
-- ".utility/push-output-to-ghpages.sh"
+  - firefox: "52.0"
+after_success:
+  - ".utility/push-output-to-ghpages.sh"

@@ -11,7 +11,10 @@ Example output is shown [here](http://concordion.github.io/concordion-screenshot
 Running the tests
 ---------------------------
 
-The tests use Selenium's FirefoxDriver, so you'll need to have Firefox installed (or you could change the code to use a different driver).
+The tests use Selenium's ChromeDriver, so you'll need to have:
+
+1. Chrome installed (or you could change the code to use a different driver).
+1. chromedriver installed and added to the `PATH` (or the `webdriver.chrome.driver` system property set)
     
 The download includes support to run the tests with either <a href="http://www.gradle.org/">Gradle</a> or <a href="http://maven.apache.org/">Maven</a>.  
     
@@ -32,7 +35,7 @@ Under the `src/test/java` folder, find the `ScreenshotDemoFixture` class in the 
 
 What you should see
 --------------------------------
-The tests will open a Firefox browser and perform a Google search.
+The tests will open a Chrome browser and perform a Google search.
     
 ### JUnit output
 The test should pass successfully, though the console output will show a failure with the message:

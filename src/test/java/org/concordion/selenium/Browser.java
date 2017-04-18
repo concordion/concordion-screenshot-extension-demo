@@ -1,6 +1,7 @@
 package org.concordion.selenium;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
@@ -11,7 +12,7 @@ public class Browser {
     private WebDriver driver;
 
     public Browser() {
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
 
          EventFiringWebDriver efwd = new EventFiringWebDriver(driver);
          efwd.register(new SeleniumEventLogger());

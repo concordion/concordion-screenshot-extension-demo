@@ -11,7 +11,8 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - sleep 3
 before_install:
-  - wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
+  - LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+  - wget https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip -d chromedriver
   - export PATH=$PATH:$PWD/chromedriver
 addons:

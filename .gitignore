@@ -9,7 +9,7 @@ build/
 bin/
 
 # IDEA
-.idea
+.idea/
 *.iml
 
 # Maven

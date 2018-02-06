@@ -1,25 +1,18 @@
-sudo: false
-dist: trusty
 language: java
 jdk:
   - oraclejdk8
 env:
   global:
     - secure: iYyxChEf+Q2iynKaDKVD6hwbqTIS0VgPvA1quFM9ZL5W+EoQXOOqSN+dILzDAYxWieS9ozmRKOWADfk4O85cp92VL9OjKo9IoS/f6ESm6uR9dc1fa7FqcBIBfc7/LtydpXrUkCS5xgSdmgfys5ks2caEle6Tib1oxzDaVJ8o3JY=
+addons:
+  chrome: stable
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install chromium-chromedriver    
 before_script:
+  - export PATH=$PATH:/usr/lib/chromium-browser/
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 3
-before_install:
-  - LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-  - wget https://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-  - unzip chromedriver_linux64.zip -d chromedriver
-  - export PATH=$PATH:$PWD/chromedriver
-addons:
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
 after_success:
   - ".utility/push-output-to-ghpages.sh"

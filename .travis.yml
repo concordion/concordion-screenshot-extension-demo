@@ -1,6 +1,11 @@
+sudo: false
+dist: trusty
 language: java
+
 jdk:
-  - oraclejdk8
+- oraclejdk10
+- oraclejdk9
+- oraclejdk8
 env:
   global:
     - secure: iYyxChEf+Q2iynKaDKVD6hwbqTIS0VgPvA1quFM9ZL5W+EoQXOOqSN+dILzDAYxWieS9ozmRKOWADfk4O85cp92VL9OjKo9IoS/f6ESm6uR9dc1fa7FqcBIBfc7/LtydpXrUkCS5xgSdmgfys5ks2caEle6Tib1oxzDaVJ8o3JY=

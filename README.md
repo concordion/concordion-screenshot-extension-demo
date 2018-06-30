@@ -4,7 +4,7 @@
 Introduction
 ------------------
 
-This project demonstrates the usage of the [Concordion](http://concordion.org) [Screenshot Extension](http://github.com/concordion/concordion-screenshot-extension) with [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/).
+This project demonstrates the usage of the [Concordion](https://concordion.org) [Screenshot Extension](http://github.com/concordion/concordion-screenshot-extension) with [Selenium WebDriver](http://docs.seleniumhq.org/projects/webdriver/).
 
 Example output is shown [here](http://concordion.github.io/concordion-screenshot-extension-demo/spec/demo/ScreenshotDemo.html).
     

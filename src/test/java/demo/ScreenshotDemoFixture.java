@@ -28,9 +28,13 @@ public class ScreenshotDemoFixture extends GoogleFixture {
     private SeleniumScreenshotTaker screenshotTaker = new SeleniumScreenshotTaker(browser);
     
     @Extension
-    public ConcordionExtension extension = new ScreenshotExtension().setScreenshotTaker(screenshotTaker);
+    public ConcordionExtension extension; // = new ScreenshotExtension().setScreenshotTaker(screenshotTaker);
     
- 	private GoogleResultsPage resultsPage; 
+ 	private GoogleResultsPage resultsPage;
+
+ 	public ScreenshotDemoFixture() {
+ 	    extension = new ScreenshotExtension().setScreenshotTaker(screenshotTaker);
+    }
 
 	/**
 	 * Searches for the specified topic, and waits for the results page to load.

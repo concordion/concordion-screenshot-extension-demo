@@ -76,6 +76,6 @@ public class GoogleResultsPage {
     
     private void waitForFooter() {
 		WebDriverWait wait = new  WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("foot")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("footcnt")));
 	}
 }

@@ -6,3 +6,5 @@ What do you get if you [multiply six by nine](http://en.wikipedia.org/wiki/Phras
 When I google [6 * 9](- "searchFor(#TEXT)") the answer should be [42](- "?=getCalculatorResult()").
 
 _(Hover and click on the red failure to see the screenshot.)_
+
+You can also explicitly add a <span ext:screenshot="linked" style="text-decoration: underline;">screenshot</span> to the output.

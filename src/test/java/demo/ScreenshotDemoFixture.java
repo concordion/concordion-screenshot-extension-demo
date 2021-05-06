@@ -2,6 +2,7 @@ package demo;
 
 import org.concordion.api.extension.ConcordionExtension;
 import org.concordion.api.extension.Extension;
+import org.concordion.api.option.ConcordionOptions;
 import org.concordion.ext.ScreenshotExtension;
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.concordion.selenium.SeleniumScreenshotTaker;
@@ -23,6 +24,7 @@ import demo.driver.google.web.GoogleSearchPage;
  * doesn't special case the answer to life, the universe and everything.
  */
 @RunWith(ConcordionRunner.class)
+@ConcordionOptions(declareNamespaces={"ext", "urn:concordion-extensions:2010"})
 public class ScreenshotDemoFixture extends GoogleFixture {
 	
     private SeleniumScreenshotTaker screenshotTaker = new SeleniumScreenshotTaker(browser);

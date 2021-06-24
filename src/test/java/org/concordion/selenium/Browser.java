@@ -19,9 +19,11 @@ public class Browser {
 
     public Browser() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+        if (("true").equals(System.getenv("HEADLESS_CHROME"))) {
+            options.addArguments("--headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+        }
         driver = new ChromeDriver(options);
 
         EventFiringWebDriver efwd = new EventFiringWebDriver(driver);

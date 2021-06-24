@@ -16,7 +16,7 @@ dependencies {
                 'org.seleniumhq.selenium:selenium-java:3.+',
                 'io.github.bonigarcia:webdrivermanager:4.+',
                 'org.slf4j:slf4j-api:1.7.21',
-                'ch.qos.logback:logback-classic:1.1.7'
+                'ch.qos.logback:logback-classic:1.2.0'
 }
 
 test {

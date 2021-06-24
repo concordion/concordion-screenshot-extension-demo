@@ -41,7 +41,7 @@ jobs:
           name: reports-java-${{ matrix.java }}
           path: |
             build/test-results/**/*.xml
-            build/reports/spec/concordion/
+            build/reports/spec/
 
   publish-test-results:
     name: "Publish Test Results and Specifications"
@@ -67,5 +67,5 @@ jobs:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           external_repository: concordion/concordion-specifications
           publish_branch: main
-          publish_dir: artifacts/reports-java-8/reports/spec/demo
+          publish_dir: artifacts/reports-java-8/reports/spec
           destination_dir: concordion-screenshot-extension-demo
